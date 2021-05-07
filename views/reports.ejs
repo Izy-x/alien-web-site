@@ -1,0 +1,35 @@
+<%- include ('partials/header.ejs') %>
+<body>
+
+    <%- include ('partials/navbar.ejs') %>
+    
+     <div class='container'>
+     </br>
+        <div class='card' id='form-of-reports'>
+            <div class='card-header'>
+                <h4>Send your report</h4>
+            </div>
+            <div class='card-body'>
+            <form method='POST' action='/save'>
+               <label>Título</label>
+               <input type='text' placeholder="Título" class='form-control' name='title'>
+               <br><label>Relato</label> 
+            <textarea placeholder="Descreva aqui sua história" class='form-control' name='description'></textarea></br>
+            <button class='btn btn-dark'>Enviar</button>
+            </form>
+            </div>
+            </div>
+
+           <% perguntasx.forEach(titley => { %>
+            <br>
+            <div class='card'>
+                <div class='card-body'>
+                   <h5><b><%= titley.titulo %></b></h5>
+                    <p><%= titley.descricao %></p>
+                    </div>
+                </div>
+         <%  }) %>
+     </div>
+
+</body>
+<%- include ('partials/footer.ejs') %>
