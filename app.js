@@ -52,8 +52,9 @@ app.get('/reports', (req, res) => {
 
 })
 
+const port = process.env.PORT || 3000
 
 // Server
-app.listen(8080,() => {
+app.listen(port,() => {
       console.log('Running!')
 })
